@@ -10,3 +10,4 @@ else
   echo "running maven without sonarqube"
   mvn clean verify
 fi
+  
