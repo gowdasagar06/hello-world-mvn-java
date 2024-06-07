@@ -1,18 +1,20 @@
 version: 0.2
- 
+
 phases:
   install:
     runtime-versions:
       java: corretto17
     commands:
-      - echo Installing SonarQube Scanner...
+      - echo "Installing SonarQube Scanner..."
       - curl -o sonar-scanner-cli.zip -L https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
       - unzip sonar-scanner-cli.zip -d /opt
       - export PATH=$PATH:/opt/sonar-scanner-4.6.2.2472-linux/bin
   build:
     commands:
+      - echo "Making run.sh executable..."
       - chmod +x run.sh
+      - echo "Running run.sh..."
       - ./run.sh
-  artifacts:
-   files: 
-     - '**/*'
+artifacts:
+  files:
+    - '**/*'
