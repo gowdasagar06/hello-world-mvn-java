@@ -17,4 +17,4 @@ phases:
       - ./run.sh
 artifacts:
   files:
-    - '**/*'
+    - 'target/*.war'
